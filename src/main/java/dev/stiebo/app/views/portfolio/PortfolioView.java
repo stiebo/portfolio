@@ -2,18 +2,13 @@ package dev.stiebo.app.views.portfolio;
 
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.HasStyle;
-import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.SvgIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
-import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.dom.ThemeList;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.theme.lumo.Lumo;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import com.vaadin.flow.theme.lumo.LumoUtility.Display;
 import com.vaadin.flow.theme.lumo.LumoUtility.FontSize;
@@ -22,12 +17,8 @@ import com.vaadin.flow.theme.lumo.LumoUtility.ListStyleType;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import com.vaadin.flow.theme.lumo.LumoUtility.MaxWidth;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding;
-import com.vaadin.flow.theme.lumo.LumoUtility.TextColor;
-import org.hibernate.query.Order;
 import org.vaadin.lineawesome.LineAwesomeIcon;
-import org.vaadin.lineawesome.LineAwesomeIconUrl;
 
-import javax.sound.sampled.Line;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,7 +34,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
             "images/TransactionSystem.jpg",
             "Transaction System",
-            "Java / Spring Boot application with H2 database",
+            "Java, Vaadin, Spring, JPA, Security, H2",
             "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
                 Optional.of("https://stiebo.dev/transactionsystem"),
                 "https://github.com/stiebo/transaction-system"
@@ -51,7 +42,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/ChatWithDocs.jpg",
                 "GenAI Document Chat Client",
-                "Java / Spring Boot application with H2 database",
+                "Vaadin, SpringAI, PGVector, OpenAI, Ollama",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
                 Optional.of("https://stiebo.dev/chatwithdocs/"),
                 "https://github.com/stiebo/spring-ai-samples-vaadin"
@@ -59,7 +50,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/AiUtilities.jpg",
                 "AI Utilities",
-                "Spring AI demo utilities",
+                "SpringAI, PostgreSQL, OpenAI, OpenAPI",
                 "This demo showcases Spring AI to integrate advanced AI capabilities, such as vector embeddings and similarity search, into document processing and conversational AI.",
                 Optional.of("https://stiebo.dev/aiutilities/swagger-ui/index.html"),
                 "https://github.com/stiebo/spring-ai-samples"
@@ -67,7 +58,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/OpenAPI.jpg",
                 "API First / OpenAPI",
-                "Java / Spring Boot application with H2 database",
+                "OpenAPI Generator Maven Plugin ",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
                 Optional.empty(),
                 "https://github.com/stiebo/openapi-generator-sample"
@@ -75,7 +66,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/QuarkusRestApi.jpg",
                 "Quarkus RestAPI",
-                "Java / Spring Boot application with H2 database",
+                "Quarkus, OpenAPI, GraalVM native",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
                 Optional.of("https://stiebo.dev/quarkusantifraudsystem/q/swagger-ui/"),
                 "https://github.com/stiebo/quarkus-anti-fraud-system"
@@ -83,7 +74,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/AntiFraud.jpg",
                 "Transaction System RestAPI",
-                "Java / Spring Boot application with H2 database",
+                "Spring, JPA, H2, Security, OpenAPI, JUnit",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
                 Optional.of("https://stiebo.dev/antifraudsystem/swagger-ui/index.html"),
                 "https://github.com/stiebo/Anti-Fraud-System"
@@ -94,7 +85,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         addClassNames("portfolio-view");
         addClassNames(MaxWidth.SCREEN_LARGE, Margin.Horizontal.AUTO, Padding.Bottom.LARGE, Padding.Horizontal.LARGE);
 
-        VerticalLayout container = new VerticalLayout();
+        VerticalLayout headerContainer = new VerticalLayout();
         HorizontalLayout intro = new HorizontalLayout();
 
         Div circularDiv = new Div();
@@ -127,18 +118,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
                                 bring fresh, innovative ideas to every endeavor.
                 """);
 
-        HorizontalLayout introLinks = new HorizontalLayout();
-        introLinks.setSpacing(true);
-        introLinks.setAlignItems(FlexComponent.Alignment.START);
-        SvgIcon linkedInIcon = LineAwesomeIcon.LINKEDIN.create();
-        Anchor linkedInLink = new Anchor("https://www.linkedin.com/in/stefan-bock", "");
-        linkedInLink.setTarget("_blank");
-        linkedInLink.add(linkedInIcon);
-        SvgIcon githubIcon = LineAwesomeIcon.GITHUB.create();
-        Anchor githubLink = new Anchor("https://www.github.com/stiebo");
-        githubLink.setTarget("_blank");
-        githubLink.add(githubIcon);
-        introLinks.add(linkedInLink, githubLink);
+        HorizontalLayout introLinks = createContactLinks();
 
         VerticalLayout introTextArea = new VerticalLayout(introName, introJob, introText, introLinks);
         introTextArea.setPadding(false);
@@ -177,12 +157,38 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         H2 featuredProjects = new H2("Featured Projects");
         featuredProjects.addClassNames(Margin.Bottom.NONE, Margin.Top.XLARGE, FontSize.XXXLARGE);
 
-        container.add(intro, new Hr(), skillsHeader, skillsContainer, new Hr(), featuredProjects);
+        headerContainer.add(intro, new Hr(), skillsHeader, skillsContainer, new Hr(), featuredProjects);
 
         imageContainer = new OrderedList();
         imageContainer.addClassNames(Gap.MEDIUM, Display.GRID, ListStyleType.NONE, Margin.NONE, Padding.NONE);
 
-        add(container, imageContainer);
+        H2 contactTitle = new H2("Contact");
+        contactTitle.addClassNames(Margin.Bottom.NONE, Margin.Top.XLARGE, FontSize.XXXLARGE);
+        Span contactName = new Span("Stefan Bock");
+        Span contactEmail = new Span("stiefbock@outlook.at");
+        HorizontalLayout contactLinks = createContactLinks();
+        VerticalLayout contactContainer = new VerticalLayout();
+        contactContainer.setPadding(false);
+        contactContainer.setSpacing(false);
+        contactContainer.add(contactTitle, contactName, contactEmail, contactLinks);
 
+        add(headerContainer, imageContainer, contactContainer);
+
+    }
+
+    private HorizontalLayout createContactLinks()  {
+        HorizontalLayout linksContainer = new HorizontalLayout();
+        linksContainer.setSpacing(true);
+        linksContainer.setAlignItems(FlexComponent.Alignment.START);
+        SvgIcon linkedInIcon = LineAwesomeIcon.LINKEDIN.create();
+        Anchor linkedInLink = new Anchor("https://www.linkedin.com/in/stefan-bock", "");
+        linkedInLink.setTarget("_blank");
+        linkedInLink.add(linkedInIcon);
+        SvgIcon githubIcon = LineAwesomeIcon.GITHUB.create();
+        Anchor githubLink = new Anchor("https://www.github.com/stiebo");
+        githubLink.setTarget("_blank");
+        githubLink.add(githubIcon);
+        linksContainer.add(linkedInLink, githubLink);
+        return linksContainer;
     }
 }

@@ -1,5 +1,5 @@
 @import url('./views/portfolio-view.css');
-@import url('./views/my-view-view.css');    html {
+html {
       --lumo-shade-5pct: rgba(33, 33, 33, 0.05);
       --lumo-shade-10pct: rgba(33, 33, 33, 0.1);
       --lumo-shade-20pct: rgba(33, 33, 33, 0.2);
