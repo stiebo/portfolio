@@ -29,6 +29,7 @@ import org.vaadin.lineawesome.LineAwesomeIconUrl;
 
 import javax.sound.sampled.Line;
 import java.util.List;
+import java.util.Optional;
 
 @PageTitle("Portfolio Stefan Bock")
 @Route("")
@@ -44,60 +45,49 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
             "Transaction System",
             "Java / Spring Boot application with H2 database",
             "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
-                "https://stiebo.dev/transactionsystem",
+                Optional.of("https://stiebo.dev/transactionsystem"),
                 "https://github.com/stiebo/transaction-system"
+        )));
+        imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
+                "images/ChatWithDocs.jpg",
+                "GenAI Document Chat Client",
+                "Java / Spring Boot application with H2 database",
+                "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
+                Optional.of("https://stiebo.dev/chatwithdocs/"),
+                "https://github.com/stiebo/spring-ai-samples-vaadin"
         )));
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/AiUtilities.jpg",
                 "AI Utilities",
                 "Spring AI demo utilities",
                 "This demo showcases Spring AI to integrate advanced AI capabilities, such as vector embeddings and similarity search, into document processing and conversational AI.",
-                "https://stiebo.dev/aiutilities/swagger-ui/index.html",
+                Optional.of("https://stiebo.dev/aiutilities/swagger-ui/index.html"),
                 "https://github.com/stiebo/spring-ai-samples"
         )));
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
-                "images/TransactionSystem.jpg",
-                "Transaction System",
+                "images/OpenAPI.jpg",
+                "API First / OpenAPI",
                 "Java / Spring Boot application with H2 database",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
-                "https://stiebo.dev/transactionsystem",
-                "https://github.com/stiebo/transaction-system"
+                Optional.empty(),
+                "https://github.com/stiebo/openapi-generator-sample"
         )));
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
-                "images/TransactionSystem.jpg",
-                "Transaction System",
+                "images/QuarkusRestApi.jpg",
+                "Quarkus RestAPI",
                 "Java / Spring Boot application with H2 database",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
-                "https://stiebo.dev/transactionsystem",
-                "https://github.com/stiebo/transaction-system"
+                Optional.of("https://stiebo.dev/quarkusantifraudsystem/q/swagger-ui/"),
+                "https://github.com/stiebo/quarkus-anti-fraud-system"
         )));
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
-                "images/TransactionSystem.jpg",
-                "Transaction System",
+                "images/AntiFraud.jpg",
+                "Transaction System RestAPI",
                 "Java / Spring Boot application with H2 database",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
-                "https://stiebo.dev/transactionsystem",
-                "https://github.com/stiebo/transaction-system"
+                Optional.of("https://stiebo.dev/antifraudsystem/swagger-ui/index.html"),
+                "https://github.com/stiebo/Anti-Fraud-System"
         )));
-        imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
-                "images/TransactionSystem.jpg",
-                "Transaction System",
-                "Java / Spring Boot application with H2 database",
-                "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
-                "https://stiebo.dev/transactionsystem",
-                "https://github.com/stiebo/transaction-system"
-        )));
-//        imageContainer.add(new PortfolioViewCard("Snow covered mountain",
-//                "https://images.unsplash.com/photo-1512273222628-4daea6e55abb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"));
-//        imageContainer.add(new PortfolioViewCard("River between mountains",
-//                "https://images.unsplash.com/photo-1536048810607-3dc7f86981cb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80"));
-//        imageContainer.add(new PortfolioViewCard("Milky way on mountains",
-//                "https://images.unsplash.com/photo-1515705576963-95cad62945b6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"));
-//        imageContainer.add(new PortfolioViewCard("Mountain with fog",
-//                "https://images.unsplash.com/photo-1513147122760-ad1d5bf68cdb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"));
-//        imageContainer.add(new PortfolioViewCard("Mountain at night",
-//                "https://images.unsplash.com/photo-1562832135-14a35d25edef?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=815&q=80"));
-
     }
 
     private void constructUI() {
@@ -109,23 +99,21 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
 
         Div circularDiv = new Div();
         circularDiv.getStyle()
-                .set("width", "300px") // Set circle width
-                .set("height", "300px") // Set circle height
-                .set("border", "3px solid orange") // Circle border
-                .set("border-radius", "50%") // Make the container circular
-                .set("overflow", "hidden") // Clip the image within the circle
-                .set("display", "flex") // Use flex for centering
-                .set("align-items", "center") // Vertically center content
-                .set("justify-content", "center"); // Horizontally center content;
+                .set("width", "280px")
+                .set("height", "280px")
+                .set("border", "3px solid var(--lumo-primary-color)")
+                .set("border-radius", "50%")
+                .set("overflow", "hidden")
+                .set("display", "flex")
+                .set("align-items", "center")
+                .set("justify-content", "center");
 
-        // Add the image to the container
         Image image = new Image("images/StefanBock.jpg", "Profile picture");
         image.getStyle()
-                .set("width", "100%") // Ensure the image covers the entire circle
-                .set("height", "100%") // Ensure the image covers the entire circle
-                .set("object-fit", "cover"); // Cover the circle while maintaining aspect ratio
+                .set("width", "100%")
+                .set("height", "100%")
+                .set("object-fit", "cover");
 
-        // Add the image to the circular container
         circularDiv.add(image);
 
         H3 introName = new H3("I am Stefan Bock");
@@ -168,21 +156,21 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         skillsContainer.setWidthFull();
         skillsContainer.setWrap(true);
         skillsContainer.add(new SkillsItems("Core", List.of(
-                new SkillItem("java-svgrepo-com.svg", "Java"),
-                new SkillItem("spring-svgrepo-com.svg", "Spring"),
-                new SkillItem("database-svgrepo-com.svg", "Data JPA"),
-                new SkillItem("swagger-svgrepo-com.svg", "OpenAPI"),
-                new SkillItem("quarkus-icon-svgrepo-com.svg", "Quarkus"),
-                new SkillItem("brand-vaadin-svgrepo-com.svg", "Vaadin")
+                new SkillItem("icons/java-svgrepo-com.svg", "Java"),
+                new SkillItem("icons/spring-svgrepo-com.svg", "Spring"),
+                new SkillItem("icons/database-svgrepo-com.svg", "Data JPA"),
+                new SkillItem("icons/swagger-svgrepo-com.svg", "OpenAPI"),
+                new SkillItem("icons/quarkus-icon-svgrepo-com.svg", "Quarkus"),
+                new SkillItem("icons/brand-vaadin-svgrepo-com.svg", "Vaadin")
         )
         ));
-        skillsContainer.add(new SkillsItems("Core", List.of(
-                new SkillItem("java-svgrepo-com.svg", "Java"),
-                new SkillItem("spring-svgrepo-com.svg", "Spring"),
-                new SkillItem("database-svgrepo-com.svg", "Data JPA"),
-                new SkillItem("swagger-svgrepo-com.svg", "OpenAPI"),
-                new SkillItem("quarkus-icon-svgrepo-com.svg", "Quarkus"),
-                new SkillItem("brand-vaadin-svgrepo-com.svg", "Vaadin")
+        skillsContainer.add(new SkillsItems("More", List.of(
+                new SkillItem("icons/github-icon-svgrepo-com.svg", "Git"),
+                new SkillItem("icons/docker-svgrepo-com.svg", "Docker"),
+                new SkillItem("icons/maven-svgrepo-com.svg", "Maven"),
+                new SkillItem("icons/sql-svgrepo-com.svg", "SQL"),
+                new SkillItem("icons/junit5-svgrepo-com.svg", "JUnit"),
+                new SkillItem("icons/linux-svgrepo-com.svg", "Linux")
         )
         ));
 

@@ -1,6 +1,5 @@
 package dev.stiebo.app.views.portfolio;
 
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.*;
@@ -28,7 +27,6 @@ public class PortfolioViewCard extends ListItem {
         Div div = new Div();
         div.addClassNames(Background.CONTRAST, Display.FLEX, AlignItems.START, JustifyContent.CENTER,
                 Margin.Bottom.MEDIUM, Overflow.HIDDEN, BorderRadius.MEDIUM, Width.FULL);
-        div.setHeight("160px");
 
         Image image = new Image();
         image.setWidth("100%");
@@ -48,14 +46,20 @@ public class PortfolioViewCard extends ListItem {
         Paragraph description = new Paragraph(
                 data.description());
         description.addClassName(Margin.Vertical.MEDIUM);
+        description.setHeight("220px");
 
-        Anchor githubLink = new Anchor(data.linkDemo());
-        githubLink.setTarget("_blank");
-        Button githubLinkButton = new Button("Live Demo");
-        githubLinkButton.getStyle().set("cursor", "pointer");
-        githubLinkButton.getElement().setAttribute("tabindex", "-1");
-        githubLinkButton.addThemeVariants(ButtonVariant.LUMO_SMALL);
-        githubLink.add(githubLinkButton);
+        HorizontalLayout links = new HorizontalLayout();
+
+        if (data.linkDemo().isPresent()) {
+            Anchor githubLink = new Anchor(data.linkDemo().get());
+            githubLink.setTarget("_blank");
+            Button githubLinkButton = new Button("Live Demo");
+            githubLinkButton.getStyle().set("cursor", "pointer");
+            githubLinkButton.getElement().setAttribute("tabindex", "-1");
+            githubLinkButton.addThemeVariants(ButtonVariant.LUMO_SMALL);
+            githubLink.add(githubLinkButton);
+            links.add(githubLink);
+        }
 
         Anchor demoLink = new Anchor(data.linkGithub());
         demoLink.setTarget("_blank");
@@ -64,8 +68,7 @@ public class PortfolioViewCard extends ListItem {
         demoLinkButton.getElement().setAttribute("tabindex", "-1");
         demoLinkButton.addThemeVariants(ButtonVariant.LUMO_SMALL);
         demoLink.add(demoLinkButton);
-
-        HorizontalLayout links = new HorizontalLayout(githubLink, demoLink);
+        links.add(demoLink);
 
         add(div, header, subtitle, description, links);
 

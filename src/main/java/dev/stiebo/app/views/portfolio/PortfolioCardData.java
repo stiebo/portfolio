@@ -1,11 +1,13 @@
 package dev.stiebo.app.views.portfolio;
 
+import java.util.Optional;
+
 public record PortfolioCardData(
         String imageLink,
         String title,
         String subTitle,
         String description,
-        String linkDemo,
+        Optional<String> linkDemo,
         String linkGithub
 ) {
 }
