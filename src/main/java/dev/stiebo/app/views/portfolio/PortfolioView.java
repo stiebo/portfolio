@@ -135,7 +135,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         linksContainer.setAlignItems(FlexComponent.Alignment.START);
 
         SvgIcon linkedInIcon = LineAwesomeIcon.LINKEDIN.create();
-        Anchor linkedInLink = new Anchor("https://www.linkedin.com/in/stefan-bock", "");
+        Anchor linkedInLink = new Anchor("https://www.linkedin.com/in/stefan-bock");
         linkedInLink.setTarget("_blank");
         linkedInLink.add(linkedInIcon);
 
