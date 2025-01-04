@@ -42,7 +42,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/ChatWithDocs.jpg",
                 "GenAI Document Chat Client",
-                "Vaadin, SpringAI, PGVector, OpenAI, Ollama",
+                "Vaadin, SpringAI, RAG, PGVector",
                 "The Anti-Fraud System provides real-time detection and prevention of potentially fraudulent activities. It helps businesses mitigate risk by leveraging advanced algorithms, blacklists, and transaction scoring. With a simple and intuitive interface, you can review suspicious transactions and take immediate action.",
                 Optional.of("https://stiebo.dev/chatwithdocs/"),
                 "https://github.com/stiebo/spring-ai-samples-vaadin"
@@ -50,7 +50,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         imageContainer.add(new PortfolioViewCard(new PortfolioCardData(
                 "images/AiUtilities.jpg",
                 "AI Utilities",
-                "SpringAI, PostgreSQL, OpenAI, OpenAPI",
+                "SpringAI, OpenAI, PostgreSQL, RAG, multimodal",
                 "This demo showcases Spring AI to integrate advanced AI capabilities, such as vector embeddings and similarity search, into document processing and conversational AI.",
                 Optional.of("https://stiebo.dev/aiutilities/swagger-ui/index.html"),
                 "https://github.com/stiebo/spring-ai-samples"

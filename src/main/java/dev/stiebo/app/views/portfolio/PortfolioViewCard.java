@@ -28,12 +28,17 @@ public class PortfolioViewCard extends ListItem {
         div.addClassNames(Background.CONTRAST, Display.FLEX, AlignItems.START, JustifyContent.CENTER,
                 Margin.Bottom.MEDIUM, Overflow.HIDDEN, BorderRadius.MEDIUM, Width.FULL);
 
+        Anchor imageAnchor = new Anchor(data.linkDemo().orElse(data.linkGithub()));
+        imageAnchor.setTarget("_blank");
+
         Image image = new Image();
         image.setWidth("100%");
+        image.getStyle().set("display", "block"); // Prevents extra space below the image
         image.setSrc(data.imageLink());
         image.setAlt(data.title());
+        imageAnchor.add(image);
 
-        div.add(image);
+        div.add(imageAnchor);
 
         Span header = new Span();
         header.addClassNames(FontSize.XLARGE, FontWeight.SEMIBOLD);
