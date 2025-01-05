@@ -51,7 +51,6 @@ public class PortfolioViewCard extends ListItem {
         Paragraph description = new Paragraph(
                 data.description());
         description.addClassName(Margin.Vertical.MEDIUM);
-        description.setHeight("220px");
 
         HorizontalLayout links = new HorizontalLayout();
 
@@ -74,6 +73,7 @@ public class PortfolioViewCard extends ListItem {
         demoLinkButton.addThemeVariants(ButtonVariant.LUMO_SMALL);
         demoLink.add(demoLinkButton);
         links.add(demoLink);
+        links.addClassName(Margin.Top.AUTO);
 
         add(div, header, subtitle, description, links);
 

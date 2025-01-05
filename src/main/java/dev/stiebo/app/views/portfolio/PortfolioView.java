@@ -68,7 +68,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
                                 technical expertise and strategic insight to every project. My enthusiasm for software
                                 development and dedication to learning ensure that I stay at the forefront
                                 of emerging technologies, while my global perspective and inter-disciplinary experience
-                                bring fresh, innovative ideas to every endeavor.
+                                add fresh and innovative ideas.
                 """);
 
         HorizontalLayout introLinks = createContactLinks();
