@@ -61,7 +61,7 @@ public class PortfolioView extends Main implements HasComponents, HasStyle {
         circularDiv.add(image);
 
         H3 introName = new H3("I am Stefan Bock");
-        H1 introJob = new H1("Java Developer");
+        H1 introJob = new H1("Software Engineer");
         Paragraph introText = new Paragraph("""
                                 As an experienced engineer and innovation manager with profound knowledge in
                                 software development, including Java and Spring Boot, I bring a unique blend of
